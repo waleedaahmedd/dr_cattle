@@ -1,3 +1,5 @@
 import 'package:flutter/cupertino.dart';
 
-class AuthViewModel with ChangeNotifier {}
+class AuthViewModel with ChangeNotifier {
+
+}

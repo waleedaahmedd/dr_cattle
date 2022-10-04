@@ -13,10 +13,10 @@ void configLoading() {
     ..loadingStyle = EasyLoadingStyle.custom
     ..indicatorSize = 45.0
     ..radius = 10.0
-    ..progressColor = CustomColors.grey
-    ..backgroundColor = CustomColors.limePunch
-    ..indicatorColor = CustomColors.grey
-    ..textColor = CustomColors.grey
+    ..progressColor = CustomColors.color2
+    ..backgroundColor = CustomColors.color1
+    ..indicatorColor = CustomColors.color2
+    ..textColor = CustomColors.color2
     ..maskColor = Colors.black.withOpacity(0.5)
     ..maskType = EasyLoadingMaskType.custom
     ..userInteractions = false
@@ -51,27 +51,27 @@ class MyApp extends StatelessWidget {
         builder: (context, child) {
           return MaterialApp(
             theme: ThemeData(
-              primaryColor: CustomColors.limePunch,
+              primaryColor: CustomColors.color1,
               colorScheme: ThemeData().colorScheme.copyWith(
-                secondary: CustomColors.limePunch,
-                primary: CustomColors.limePunch,
+                secondary: CustomColors.color1,
+                primary: CustomColors.color2,
               ),
               textSelectionTheme: const TextSelectionThemeData(
-                cursorColor: CustomColors.limePunch, //<-- SEE HERE
+                cursorColor: CustomColors.color1, //<-- SEE HERE
               ),
               inputDecorationTheme: InputDecorationTheme(
                 //suffixIconColor: CustomColors.purple,
-                focusColor: CustomColors.limePunch,
+                focusColor: CustomColors.color1,
                 hintStyle: TextStyle(
-                    color: Colors.white.withOpacity(0.5),
+                    color: CustomColors.tintColor2,
                     fontSize: 12.sp,
                     fontWeight: FontWeight.bold),
                 labelStyle: TextStyle(
-                    color: CustomColors.limePunch,
+                    color: CustomColors.color1,
                     fontSize: 12.sp,
                     fontWeight: FontWeight.bold),
                 focusedBorder: const OutlineInputBorder(
-                    borderSide: BorderSide(color: CustomColors.limePunch)),
+                    borderSide: BorderSide(color: CustomColors.color1)),
               ),
             ),
             debugShowCheckedModeBanner: false,

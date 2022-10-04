@@ -20,7 +20,7 @@ class GoogleFontText1 extends StatelessWidget {
       style: TextStyle(
           fontFamily: 'MontaguSlab',
           fontSize: 25.sp,
-          color: Colors.white,
+          color: CustomColors.color1,
           fontWeight: FontWeight.w400),
     );
   }
@@ -82,7 +82,7 @@ class GoogleFontText4 extends StatelessWidget {
       data,
       style: TextStyle(
         fontSize: 16.sp,
-        color: CustomColors.grey,
+        color: CustomColors.color2,
         fontFamily: 'MontaguSlab',
       ),
     );
@@ -104,7 +104,7 @@ class GoogleFontText5 extends StatelessWidget {
       data,
       style: TextStyle(
         fontSize: 18.sp,
-        color: CustomColors.grey,
+        color: CustomColors.color2,
         fontFamily: 'MontaguSlab',
       ),
     );
@@ -127,7 +127,7 @@ class GoogleFontText6 extends StatelessWidget {
       textAlign: TextAlign.center,
       style: TextStyle(
         fontSize: 14.sp,
-        color: CustomColors.grey,
+        color: CustomColors.color2,
         fontFamily: 'MontaguSlab',
       ),
     );
@@ -149,7 +149,7 @@ class NormalFontText1 extends StatelessWidget {
     return Text(
       data,
       style: TextStyle(
-          color: CustomColors.limePunch,
+          color: CustomColors.color2,
           fontWeight: FontWeight.bold,
           fontSize: 14.sp),
     );
@@ -169,7 +169,7 @@ class NormalFontText2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       data,
-      style: TextStyle(color: CustomColors.limePunch, fontSize: 12.sp),
+      style: TextStyle(color: CustomColors.color1, fontSize: 12.sp),
     );
   }
 }
@@ -225,7 +225,7 @@ class NormalFontText5 extends StatelessWidget {
     return Text(
       data,
       style: TextStyle(
-          color: CustomColors.limePunch,
+          color: CustomColors.color1,
           fontWeight: FontWeight.w800,
           fontSize: 12.sp),
     );
@@ -246,7 +246,7 @@ class NormalFontText6 extends StatelessWidget {
     return Text(
       data,
       style: TextStyle(
-          color: CustomColors.grey,
+          color: CustomColors.color2,
           fontWeight: FontWeight.bold,
           fontSize: 12.sp),
     );
@@ -286,7 +286,7 @@ class NormalFontText8 extends StatelessWidget {
       data,
       textAlign: TextAlign.center,
       style: TextStyle(
-          color: CustomColors.limePunch,
+          color: CustomColors.color1,
           fontWeight: FontWeight.w500,
           fontSize: 16.sp),
     );

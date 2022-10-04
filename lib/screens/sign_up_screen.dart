@@ -1,50 +1,32 @@
-import 'package:dr_cattle/utils/custom_colors.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:provider/provider.dart';
+
 import '../utils/custom_buttons.dart';
+import '../utils/custom_colors.dart';
 import '../utils/custom_font_style.dart';
 import '../view_models/auth_view_model.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+class SignUpScreen extends StatelessWidget {
+  const SignUpScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Consumer<AuthViewModel>(
       builder: (_, authViewModel, __) {
         return Scaffold(
-          backgroundColor: CustomColors.color2,
           body: SafeArea(
             child: CustomScrollView(
               slivers: [
                 SliverFillRemaining(
                   hasScrollBody: false,
-                  child: Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 100, horizontal: 60),
-                        child: Text(
-                          'Doctor Cattle',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
-                            fontSize: 40.sp,
-                            fontFamily: 'MontaguSlab',
-                          ),
-                        ),
-                      ),
-                      Expanded(
-                        child: Container(
-                          decoration: const BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.vertical(
-                                  top: Radius.circular(20.0))),
-                          width: double.infinity,
-                          padding: const EdgeInsets.all(20),
+                  child: Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Column(
+                      children: [
+
+                        Expanded(
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -52,11 +34,41 @@ class LoginScreen extends StatelessWidget {
                               const Padding(
                                 padding: EdgeInsets.only(bottom: 20.0),
                                 child: GoogleFontText1(
-                                  data: 'Login',
+                                  data: 'Sign Up',
                                 ),
                               ),
                               Column(
                                 children: [
+                                  TextField(
+                                    decoration: InputDecoration(
+                                      border: const OutlineInputBorder(),
+                                      suffixIcon: IconButton(
+                                        onPressed: () {},
+                                        icon: const Icon(
+                                          Icons.person,
+                                        ),
+                                      ),
+                                      hintText: 'FIRST NAME',
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 20.h,
+                                  ),
+                                  TextField(
+                                    decoration: InputDecoration(
+                                      border: const OutlineInputBorder(),
+                                      suffixIcon: IconButton(
+                                        onPressed: () {},
+                                        icon: const Icon(
+                                          Icons.person,
+                                        ),
+                                      ),
+                                      hintText: 'LAST NAME',
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 20.h,
+                                  ),
                                   IntlPhoneField(
                                     //controller: authViewModel.emailController,
                                     decoration: const InputDecoration(
@@ -86,48 +98,46 @@ class LoginScreen extends StatelessWidget {
                                       hintText: 'PASSWORD',
                                     ),
                                   ),
-                                  Align(
-                                      alignment: Alignment.centerRight,
-                                      child: TextButton(
-                                        style: TextButton.styleFrom(
-                                          padding: EdgeInsets.zero,
+                                  SizedBox(
+                                    height: 20.h,
+                                  ),
+                                  TextField(
+                                    decoration: InputDecoration(
+                                      border: const OutlineInputBorder(),
+                                      suffixIcon: IconButton(
+                                        onPressed: () {},
+                                        icon: const Icon(
+                                          Icons.lock_outline,
                                         ),
-                                        onPressed: () {
-                                          Navigator.of(context)
-                                              .pushNamed('/forget_password');
-                                        },
-                                        child: const NormalFontText1(
-                                          data: 'FORGOT PASSWORD?',
-                                        ),
-                                      )),
+                                      ),
+                                      hintText: 'CONFIRM PASSWORD',
+                                    ),
+                                  ),
+
                                 ],
                               ),
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   CustomButton1(
-                                    text: 'SIGN IN',
-                                    onPressed: () {
-                                      Navigator.of(context)
-                                          .pushNamed('/farms_list_screen');
-                                    },
+                                    text: 'REGISTER',
+                                    onPressed: () {},
                                   ),
                                   SizedBox(
                                     height: 40.h,
                                   ),
                                   const NormalFontText1(
-                                    data: 'NEW HERE?',
+                                    data: 'ALREADY HAVE AN ACCOUNT?',
                                   ),
                                   TextButton(
                                     style: TextButton.styleFrom(
                                       padding: EdgeInsets.zero,
                                     ),
                                     onPressed: () {
-                                      Navigator.of(context)
-                                          .pushNamed('/sign_up');
+                                      Navigator.pop(context);
                                     },
                                     child: const GoogleFontText1(
-                                      data: 'Sign Up >',
+                                      data: 'Sign In >',
                                     ),
                                   ),
                                 ],
@@ -135,8 +145,8 @@ class LoginScreen extends StatelessWidget {
                             ],
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ],

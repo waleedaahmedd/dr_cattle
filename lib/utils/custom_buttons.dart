@@ -42,13 +42,13 @@ class CustomButton2 extends StatelessWidget {
       width: double.infinity,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          primary: Colors.white,
+          backgroundColor: Colors.white,
           shape: RoundedRectangleBorder(
             //to set border radius to button
               borderRadius: BorderRadius.circular(10)),
         ),
         onPressed: onPressed,
-        child: Text(text,style:  TextStyle(color: CustomColors.grey),),
+        child: Text(text,style:  TextStyle(color: CustomColors.color2),),
       ),
     );
   }

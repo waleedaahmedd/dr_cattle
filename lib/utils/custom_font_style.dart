@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'custom_colors.dart';
 
 //google fonts
-//google font, color golden, size 25, w400
+//google font, color grey, size 25, w400
 class GoogleFontText1 extends StatelessWidget {
   final String data;
 
@@ -45,7 +45,7 @@ class GoogleFontText2 extends StatelessWidget {
   }
 }
 
-//google font, color white, size 25
+//google font, color white, size 20, w400
 class GoogleFontText3 extends StatelessWidget {
   final String data;
 
@@ -59,10 +59,10 @@ class GoogleFontText3 extends StatelessWidget {
     return Text(
       data,
       style: TextStyle(
-        fontSize: 25.sp,
-        color: Colors.white,
-        fontFamily: 'MontaguSlab',
-      ),
+          fontSize: 20.sp,
+          color: Colors.white,
+          fontFamily: 'MontaguSlab',
+          fontWeight: FontWeight.w400),
     );
   }
 }

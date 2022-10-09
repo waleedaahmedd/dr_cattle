@@ -1,3 +1,4 @@
+import 'package:dr_cattle/screens/cattle_list_screen.dart';
 import 'package:dr_cattle/screens/farms_list_screen.dart';
 import 'package:dr_cattle/screens/login_screen.dart';
 import 'package:dr_cattle/screens/sign_up_screen.dart';
@@ -19,8 +20,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const SignUpScreen());
       case '/farms_list_screen':
         return MaterialPageRoute(builder: (_) => const FarmsListScreen());
-      case '/wineryDetails':
-      //   return MaterialPageRoute(builder: (_) => const WineryDetailsScreen());
+      case '/cattle_list_screen':
+         return MaterialPageRoute(builder: (_) => const CattleListScreen());
       case '/my_reservation':
       //   return MaterialPageRoute(builder: (_) => const MyReservationScreen());
       case '/tasting_list':

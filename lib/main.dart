@@ -56,14 +56,21 @@ class MyApp extends StatelessWidget {
                 secondary: CustomColors.color1,
                 primary: CustomColors.color2,
               ),
+              textTheme: const TextTheme(
+              subtitle1: TextStyle(
+              color: CustomColors.color1, // <-- TextFormField input color
+              ),
+            ),
               textSelectionTheme: const TextSelectionThemeData(
                 cursorColor: CustomColors.color1, //<-- SEE HERE
               ),
               inputDecorationTheme: InputDecorationTheme(
-                //suffixIconColor: CustomColors.purple,
+                enabledBorder:  const OutlineInputBorder(borderSide: BorderSide(color: CustomColors.color2)),
+               // border: ,
+                suffixIconColor: CustomColors.color2,
                 focusColor: CustomColors.color1,
                 hintStyle: TextStyle(
-                    color: CustomColors.tintColor2,
+                    color: CustomColors.tintColor1,
                     fontSize: 12.sp,
                     fontWeight: FontWeight.bold),
                 labelStyle: TextStyle(

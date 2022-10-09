@@ -40,15 +40,16 @@ class CustomButton2 extends StatelessWidget {
     return SizedBox(
       height: 40.h,
       width: double.infinity,
-      child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.white,
-          shape: RoundedRectangleBorder(
-            //to set border radius to button
-              borderRadius: BorderRadius.circular(10)),
+      child: Container(
+        decoration: BoxDecoration(gradient: CustomColors.gradientColor1,
+            borderRadius: const BorderRadius.all(Radius.circular(10))),
+        child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.transparent, shadowColor: Colors.transparent
+          ),
+          onPressed: onPressed,
+          child: Text(text,style:  const TextStyle(color: Colors.white),),
         ),
-        onPressed: onPressed,
-        child: Text(text,style:  TextStyle(color: CustomColors.color2),),
       ),
     );
   }

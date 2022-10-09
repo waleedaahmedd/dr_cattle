@@ -16,6 +16,7 @@ class SignUpScreen extends StatelessWidget {
     return Consumer<AuthViewModel>(
       builder: (_, authViewModel, __) {
         return Scaffold(
+          backgroundColor: Colors.white,
           body: SafeArea(
             child: CustomScrollView(
               slivers: [
@@ -41,7 +42,7 @@ class SignUpScreen extends StatelessWidget {
                                 children: [
                                   TextField(
                                     decoration: InputDecoration(
-                                      border: const OutlineInputBorder(),
+                                     // border: const OutlineInputBorder(),
                                       suffixIcon: IconButton(
                                         onPressed: () {},
                                         icon: const Icon(
@@ -56,7 +57,7 @@ class SignUpScreen extends StatelessWidget {
                                   ),
                                   TextField(
                                     decoration: InputDecoration(
-                                      border: const OutlineInputBorder(),
+                                     // border: const OutlineInputBorder(),
                                       suffixIcon: IconButton(
                                         onPressed: () {},
                                         icon: const Icon(
@@ -70,9 +71,12 @@ class SignUpScreen extends StatelessWidget {
                                     height: 20.h,
                                   ),
                                   IntlPhoneField(
+                                    dropdownTextStyle: const TextStyle(color:  CustomColors.color1),
+
+                                    dropdownIcon: const Icon(Icons.arrow_drop_down_outlined ,color:  CustomColors.color1,),
                                     //controller: authViewModel.emailController,
                                     decoration: const InputDecoration(
-                                      border: OutlineInputBorder(),
+                                   //   border: OutlineInputBorder(),
                                       suffixIcon: Icon(
                                         Icons.phone_outlined,
                                       ),
@@ -88,7 +92,7 @@ class SignUpScreen extends StatelessWidget {
                                   ),
                                   TextField(
                                     decoration: InputDecoration(
-                                      border: const OutlineInputBorder(),
+                                     // border: const OutlineInputBorder(),
                                       suffixIcon: IconButton(
                                         onPressed: () {},
                                         icon: const Icon(
@@ -103,7 +107,7 @@ class SignUpScreen extends StatelessWidget {
                                   ),
                                   TextField(
                                     decoration: InputDecoration(
-                                      border: const OutlineInputBorder(),
+                                     // border: const OutlineInputBorder(),
                                       suffixIcon: IconButton(
                                         onPressed: () {},
                                         icon: const Icon(
@@ -113,13 +117,15 @@ class SignUpScreen extends StatelessWidget {
                                       hintText: 'CONFIRM PASSWORD',
                                     ),
                                   ),
-
+                                  SizedBox(
+                                    height: 20.h,
+                                  ),
                                 ],
                               ),
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  CustomButton1(
+                                  CustomButton2(
                                     text: 'REGISTER',
                                     onPressed: () {},
                                   ),

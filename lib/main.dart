@@ -56,29 +56,34 @@ class MyApp extends StatelessWidget {
                 secondary: CustomColors.color1,
                 primary: CustomColors.color2,
               ),
-              textTheme: const TextTheme(
+              textTheme:  TextTheme(
               subtitle1: TextStyle(
-              color: CustomColors.color1, // <-- TextFormField input color
+                fontFamily: 'Rubik',
+                fontSize: 12.sp,
+              color: CustomColors.color2, // <-- TextFormField input color
               ),
             ),
               textSelectionTheme: const TextSelectionThemeData(
-                cursorColor: CustomColors.color1, //<-- SEE HERE
+                cursorColor: CustomColors.color2, //<-- SEE HERE
               ),
               inputDecorationTheme: InputDecorationTheme(
-                enabledBorder:  const OutlineInputBorder(borderSide: BorderSide(color: CustomColors.color2)),
+                fillColor: Colors.white,
+               filled: true,
+                enabledBorder:  const OutlineInputBorder(borderSide: BorderSide(color: Colors.transparent),borderRadius: BorderRadius.all(Radius.circular(15))),
                // border: ,
-                suffixIconColor: CustomColors.color2,
+                suffixIconColor: CustomColors.color3,
+                prefixIconColor: CustomColors.color3,
                 focusColor: CustomColors.color1,
                 hintStyle: TextStyle(
-                    color: CustomColors.tintColor1,
-                    fontSize: 12.sp,
-                    fontWeight: FontWeight.bold),
-                labelStyle: TextStyle(
+                  fontFamily: 'Rubik',
+                  fontSize: 12.sp,
+                  color: Colors.grey,),
+                /*labelStyle: TextStyle(
                     color: CustomColors.color1,
                     fontSize: 12.sp,
-                    fontWeight: FontWeight.bold),
+                    fontWeight: FontWeight.bold),*/
                 focusedBorder: const OutlineInputBorder(
-                    borderSide: BorderSide(color: CustomColors.color1)),
+                    borderSide: BorderSide(color: CustomColors.color1),borderRadius: BorderRadius.all(Radius.circular(15))),
               ),
             ),
             debugShowCheckedModeBanner: false,

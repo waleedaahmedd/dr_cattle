@@ -15,129 +15,134 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<AuthViewModel>(
       builder: (_, authViewModel, __) {
-        return Scaffold(
-          body: Container(
-            decoration: BoxDecoration(gradient: CustomColors.gradientColor1),
-            child: SafeArea(
+        return Container(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
+          decoration: const BoxDecoration(
+              image: DecorationImage(
+            image: AssetImage('assets/images/backgroung.jpg'),
+            fit: BoxFit.cover,
+          )),
+          child: Scaffold(
+            backgroundColor: Colors.transparent,
+            body: Padding(
+              padding: const EdgeInsets.all(30),
               child: CustomScrollView(
                 slivers: [
                   SliverFillRemaining(
                     hasScrollBody: false,
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 100, horizontal: 60),
-                          child: Text(
-                            'Doctor Cattle',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w500,
-                              fontSize: 30.sp,
-                              fontFamily: 'MontaguSlab',
+                        SizedBox(
+                          height: 140.h,
+                        ),
+                        const GoogleFontText1(
+                          data: 'Sign In',
+                        ),
+                        SizedBox(
+                          height: 10.h,
+                        ),
+                        const GoogleFontText2(
+                          data: 'Enter phone number and password to sign in',
+                        ),
+                        SizedBox(
+                          height: 40.h,
+                        ),
+                        IntlPhoneField(
+                          style: TextStyle(fontFamily: 'Rubik',
+                              fontSize: 12.sp,
+                              color: CustomColors.color2,),
+                          flagsButtonPadding: const EdgeInsets.only(left: 15, bottom: 2),
+                          showCountryFlag: false,
+                          //showDropdownIcon: false,
+                          disableLengthCheck: true,
+                          dropdownTextStyle:
+                           TextStyle(
+                              fontFamily: 'Rubik',
+                              fontSize: 12.sp,
+                              color: CustomColors.color2),
+
+                          dropdownIcon: const Icon(
+                            Icons.arrow_drop_down_outlined,
+                            color: CustomColors.color2,
+                          ),
+                          //controller: authViewModel.emailController,
+                          decoration:  InputDecoration(
+                            // border: OutlineInputBorder(),
+                            suffixIcon: Icon(
+                              Icons.phone_outlined,
+                              size: 15.h,
                             ),
+                            hintText: 'Enter Phone Number',
+                          ),
+                          initialCountryCode: 'PK',
+                          onChanged: (phone) {
+                            print(phone.completeNumber);
+                          },
+                        ),
+                        SizedBox(
+                          height: 10.h,
+                        ),
+                        TextField(
+                          decoration: InputDecoration(
+                            // border: const OutlineInputBorder(),
+                            prefixIcon: Icon(Icons.lock,size: 15.h,),
+                            suffixIcon: IconButton(
+                              onPressed: () {},
+                              icon:  Icon(
+                                Icons.remove_red_eye,
+                                size: 15.h,
+                              ),
+                            ),
+                            hintText: 'Enter Password',
                           ),
                         ),
-                        Expanded(
-                          child: Container(
-                            decoration: const BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.vertical(
-                                    top: Radius.circular(20.0))),
-                            width: double.infinity,
-                            padding: const EdgeInsets.all(20),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                const Padding(
-                                  padding: EdgeInsets.only(bottom: 20.0),
-                                  child: GoogleFontText1(
-                                    data: 'Login',
-                                  ),
-                                ),
-                                Column(
-                                  children: [
-                                    IntlPhoneField(
-                                      dropdownTextStyle: const TextStyle(color:  CustomColors.color1),
-
-                                      dropdownIcon: const Icon(Icons.arrow_drop_down_outlined ,color: CustomColors.color1,),
-                                      //controller: authViewModel.emailController,
-                                      decoration: const InputDecoration(
-                                       // border: OutlineInputBorder(),
-                                        suffixIcon: Icon(
-                                          Icons.phone_outlined,
-                                        ),
-                                        hintText: 'PHONE NUMBER',
-                                      ),
-                                      initialCountryCode: 'PK',
-                                      onChanged: (phone) {
-                                        print(phone.completeNumber);
-                                      },
-                                    ),
-                                    SizedBox(
-                                      height: 10.h,
-                                    ),
-                                    TextField(
-                                      decoration: InputDecoration(
-                                       // border: const OutlineInputBorder(),
-                                        suffixIcon: IconButton(
-                                          onPressed: () {},
-                                          icon: const Icon(
-                                            Icons.remove_red_eye,
-                                          ),
-                                        ),
-                                        hintText: 'PASSWORD',
-                                      ),
-                                    ),
-                                    Align(
-                                        alignment: Alignment.centerRight,
-                                        child: TextButton(
-                                          style: TextButton.styleFrom(
-                                            padding: EdgeInsets.zero,
-                                          ),
-                                          onPressed: () {
-                                            Navigator.of(context)
-                                                .pushNamed('/forget_password');
-                                          },
-                                          child: const NormalFontText1(
-                                            data: 'FORGOT PASSWORD?',
-                                          ),
-                                        )),
-                                  ],
-                                ),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    CustomButton2(
-                                      text: 'SIGN IN',
-                                      onPressed: () {
-                                        Navigator.of(context)
-                                            .pushNamed('/farms_list_screen');
-                                      },
-                                    ),
-                                    SizedBox(
-                                      height: 40.h,
-                                    ),
-                                    const NormalFontText1(
-                                      data: 'NEW HERE?',
-                                    ),
-                                    TextButton(
-                                      style: TextButton.styleFrom(
-                                        padding: EdgeInsets.zero,
-                                      ),
-                                      onPressed: () {
-                                        Navigator.of(context)
-                                            .pushNamed('/sign_up');
-                                      },
-                                      child: const GoogleFontText1(
-                                        data: 'Sign Up >',
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
+                        SizedBox(
+                          height: 15.h,
+                        ),
+                        Align(
+                            alignment: Alignment.centerRight,
+                            child: TextButton(
+                              style: TextButton.styleFrom(
+                                padding: EdgeInsets.zero,
+                              ),
+                              onPressed: () {
+                                Navigator.of(context)
+                                    .pushNamed('/forget_password');
+                              },
+                              child: const GoogleFontText2(
+                                data: 'Forgot Password?',
+                              ),
+                            )),
+                        SizedBox(
+                          height: 15.h,
+                        ),
+                        CustomButton2(
+                          text: 'SIGN IN',
+                          onPressed: () {
+                            Navigator.of(context).pushNamed('/farms_list_screen');
+                          },
+                        ),
+                        const Spacer(),
+                        TextButton(
+                          style: TextButton.styleFrom(
+                            padding: EdgeInsets.zero,
+                          ),
+                          onPressed: () {
+                            Navigator.of(context).pushNamed('/sign_up');
+                          },
+                          child: Row(
+                            children: const [
+                              Spacer(),
+                              GoogleFontText2(
+                                data: 'Don’t have an account?  ',
+                              ),
+                              GoogleFontText3(
+                                data: 'Sign up',
+                              ),
+                              Spacer()
+                            ],
                           ),
                         ),
                       ],

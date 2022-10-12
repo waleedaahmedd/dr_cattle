@@ -15,10 +15,17 @@ class SignUpScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<AuthViewModel>(
       builder: (_, authViewModel, __) {
-        return Scaffold(
-          backgroundColor: Colors.white,
-          body: SafeArea(
-            child: CustomScrollView(
+        return Container(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
+          decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('assets/images/backgroung.jpg'),
+                fit: BoxFit.cover,
+              )),
+          child: Scaffold(
+            backgroundColor: Colors.transparent,
+            body: CustomScrollView(
               slivers: [
                 SliverFillRemaining(
                   hasScrollBody: false,
@@ -26,130 +33,144 @@ class SignUpScreen extends StatelessWidget {
                     padding: const EdgeInsets.all(20),
                     child: Column(
                       children: [
-
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              const Padding(
-                                padding: EdgeInsets.only(bottom: 20.0),
-                                child: GoogleFontText1(
-                                  data: 'Sign Up',
-                                ),
+                        SizedBox(
+                          height: 140.h,
+                        ),
+                        const GoogleFontText1(
+                          data: 'Sign Up',
+                        ),
+                        SizedBox(
+                          height: 10.h,
+                        ),
+                        const GoogleFontText2(
+                          data: 'Enter your details to sign up',
+                        ),
+                        SizedBox(
+                          height: 40.h,
+                        ),
+                        TextField(
+                          decoration: InputDecoration(
+                            // border: const OutlineInputBorder(),
+                            suffixIcon: IconButton(
+                              onPressed: () {},
+                              icon:  Icon(
+                                Icons.person,
+                                size: 15.h,
                               ),
-                              Column(
-                                children: [
-                                  TextField(
-                                    decoration: InputDecoration(
-                                     // border: const OutlineInputBorder(),
-                                      suffixIcon: IconButton(
-                                        onPressed: () {},
-                                        icon: const Icon(
-                                          Icons.person,
-                                        ),
-                                      ),
-                                      hintText: 'FIRST NAME',
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 20.h,
-                                  ),
-                                  TextField(
-                                    decoration: InputDecoration(
-                                     // border: const OutlineInputBorder(),
-                                      suffixIcon: IconButton(
-                                        onPressed: () {},
-                                        icon: const Icon(
-                                          Icons.person,
-                                        ),
-                                      ),
-                                      hintText: 'LAST NAME',
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 20.h,
-                                  ),
-                                  IntlPhoneField(
-                                    dropdownTextStyle: const TextStyle(color:  CustomColors.color1),
-
-                                    dropdownIcon: const Icon(Icons.arrow_drop_down_outlined ,color:  CustomColors.color1,),
-                                    //controller: authViewModel.emailController,
-                                    decoration: const InputDecoration(
-                                   //   border: OutlineInputBorder(),
-                                      suffixIcon: Icon(
-                                        Icons.phone_outlined,
-                                      ),
-                                      hintText: 'PHONE NUMBER',
-                                    ),
-                                    initialCountryCode: 'PK',
-                                    onChanged: (phone) {
-                                      print(phone.completeNumber);
-                                    },
-                                  ),
-                                  SizedBox(
-                                    height: 10.h,
-                                  ),
-                                  TextField(
-                                    decoration: InputDecoration(
-                                     // border: const OutlineInputBorder(),
-                                      suffixIcon: IconButton(
-                                        onPressed: () {},
-                                        icon: const Icon(
-                                          Icons.remove_red_eye,
-                                        ),
-                                      ),
-                                      hintText: 'PASSWORD',
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 20.h,
-                                  ),
-                                  TextField(
-                                    decoration: InputDecoration(
-                                     // border: const OutlineInputBorder(),
-                                      suffixIcon: IconButton(
-                                        onPressed: () {},
-                                        icon: const Icon(
-                                          Icons.lock_outline,
-                                        ),
-                                      ),
-                                      hintText: 'CONFIRM PASSWORD',
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 20.h,
-                                  ),
-                                ],
-                              ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  CustomButton2(
-                                    text: 'REGISTER',
-                                    onPressed: () {},
-                                  ),
-                                  SizedBox(
-                                    height: 40.h,
-                                  ),
-                                  const NormalFontText1(
-                                    data: 'ALREADY HAVE AN ACCOUNT?',
-                                  ),
-                                  TextButton(
-                                    style: TextButton.styleFrom(
-                                      padding: EdgeInsets.zero,
-                                    ),
-                                    onPressed: () {
-                                      Navigator.pop(context);
-                                    },
-                                    child: const GoogleFontText1(
-                                      data: 'Sign In >',
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ],
+                            ),
+                            hintText: 'Enter First Name',
                           ),
+                        ),
+                        SizedBox(
+                          height: 10.h,
+                        ),
+                        TextField(
+                          decoration: InputDecoration(
+                            // border: const OutlineInputBorder(),
+                            suffixIcon: IconButton(
+                              onPressed: () {},
+                              icon:  Icon(
+                                Icons.person,
+                                size: 15.h,
+                              ),
+                            ),
+                            hintText: 'Enter Last Name',
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10.h,
+                        ),
+                        IntlPhoneField(
+                          style: TextStyle(fontFamily: 'Rubik',
+                            fontSize: 12.sp,
+                            color: CustomColors.color2,),
+                          flagsButtonPadding: const EdgeInsets.only(left: 15, bottom: 2),
+                          showCountryFlag: false,
+                          //showDropdownIcon: false,
+                          disableLengthCheck: true,
+                          dropdownTextStyle:
+                          TextStyle(
+                              fontFamily: 'Rubik',
+                              fontSize: 12.sp,
+                              color: CustomColors.color2),
+
+                          dropdownIcon: const Icon(
+                            Icons.arrow_drop_down_outlined,
+                            color: CustomColors.color2,
+                          ),
+                          //controller: authViewModel.emailController,
+                          decoration:  InputDecoration(
+                            // border: OutlineInputBorder(),
+                            suffixIcon: Icon(
+                              Icons.phone_outlined,
+                              size: 15.h,
+                            ),
+                            hintText: 'Enter Phone Number',
+                          ),
+                          initialCountryCode: 'PK',
+                          onChanged: (phone) {
+                            print(phone.completeNumber);
+                          },
+                        ),
+                        SizedBox(
+                          height: 10.h,
+                        ),
+                        TextField(
+                          decoration: InputDecoration(
+                            // border: const OutlineInputBorder(),
+                            suffixIcon: IconButton(
+                              onPressed: () {},
+                              icon:  Icon(
+                                Icons.remove_red_eye,
+                                size: 15.h,
+                              ),
+                            ),
+                            hintText: 'Your Password',
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10.h,
+                        ),
+                        TextField(
+                          decoration: InputDecoration(
+                            // border: const OutlineInputBorder(),
+                            suffixIcon: IconButton(
+                              onPressed: () {},
+                              icon:  Icon(
+                                Icons.lock_outline,
+                                size: 15.h,
+                              ),
+                            ),
+                            hintText: 'Confirm Password',
+                          ),
+                        ),
+                        SizedBox(
+                          height: 20.h,
+                        ),
+                        CustomButton2(
+                          text: 'SIGN UP',
+                          onPressed: () {},
+                        ),
+                        const Spacer(),
+                        TextButton(
+                          style: TextButton.styleFrom(
+                            padding: EdgeInsets.zero,
+                          ),
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          child:  Row(
+                            children: const [
+                              Spacer(),
+                              GoogleFontText2(
+                                data: 'Already have an account?  ',
+                              ),
+                              GoogleFontText3(
+                                data: 'Sign in',
+                              ),
+                              Spacer()
+                            ],
+                          )
                         ),
                       ],
                     ),

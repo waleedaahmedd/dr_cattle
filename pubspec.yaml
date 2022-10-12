@@ -86,6 +86,8 @@ flutter:
       fonts:
         - asset: assets/fonts/MontaguSlab_120pt-Light.ttf
         - asset: assets/fonts/MontaguSlab_120pt-Regular.ttf
+        - asset: assets/fonts/Rubik-Black.ttf
+        - asset: assets/fonts/Rubik-Bold.ttf
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:

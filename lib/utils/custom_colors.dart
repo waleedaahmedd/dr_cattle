@@ -12,9 +12,9 @@ class CustomColors {
   static const Color color3 = Color.fromRGBO(167, 175, 186, 1);
   static Color tintColor3 = const Color.fromRGBO(167, 175, 186, 0.5);
 
-  static Gradient gradientColor1 = const LinearGradient(colors: <Color>[Color.fromRGBO(25, 22, 84,1),
-    Color.fromRGBO(67, 198, 172,1),]);
+  static Gradient gradientColor1 = const LinearGradient(begin: Alignment.topCenter,end: Alignment.bottomCenter,colors: <Color>[Color.fromRGBO(196, 219, 234,0.5),
+    Color.fromRGBO(252, 255, 255,1),]);
 
-  static LinearGradient linearGradient1 = const LinearGradient(colors: <Color>[Color.fromRGBO(25, 22, 84,1),
-    Color.fromRGBO(67, 198, 172,1),]);
+  static LinearGradient linearGradient1 = const LinearGradient(colors: <Color>[Color.fromRGBO(255, 122, 0,1),
+    Color.fromRGBO(255, 184, 0,1),]);
 }

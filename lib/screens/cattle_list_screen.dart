@@ -52,6 +52,7 @@ class CattleListScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
+                crossAxisSpacing: 20,
                 mainAxisExtent: 260,
               ),
               itemCount: 5,
@@ -72,7 +73,7 @@ class CattleListScreen extends StatelessWidget {
                         Image.asset(
                           'assets/images/cow.jpg',
                           width: double.infinity,
-                          height: 100.h,
+                          height: 100.w,
                           fit: BoxFit.cover,
                         ),
                         Padding(
@@ -95,7 +96,7 @@ class CattleListScreen extends StatelessWidget {
                                 animation: true,
                                 barRadius: const Radius.circular(10),
                                 animationDuration: 2000,
-                                width: MediaQuery.of(context).size.width - 253,
+                                width: 130.w,
                                 lineHeight: 10.0.h,
                                 center: const Text(
                                   "Dehydration 50.0%",
@@ -118,7 +119,7 @@ class CattleListScreen extends StatelessWidget {
                                 animation: true,
                                 barRadius: const Radius.circular(10),
                                 animationDuration: 2000,
-                                width: MediaQuery.of(context).size.width - 253,
+                                width: 130.w,
                                 lineHeight: 10.0.h,
                                 center: const Text(
                                   "Heart Rate 50.0%",
@@ -141,7 +142,7 @@ class CattleListScreen extends StatelessWidget {
                                 animation: true,
                                 barRadius: const Radius.circular(10),
                                 animationDuration: 2000,
-                                width: MediaQuery.of(context).size.width - 253,
+                                width: 130.w,
                                 lineHeight: 10.0.h,
                                 center: const Text(
                                   "Health 50.0%",

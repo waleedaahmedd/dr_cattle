@@ -71,6 +71,76 @@ class GoogleFontText3 extends StatelessWidget {
   }
 }
 
+//google font, color black, size 12, w800
+class GoogleFontText4 extends StatelessWidget {
+  final String data;
+
+  const GoogleFontText4({
+    Key? key,
+    required this.data,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      data,
+      style: TextStyle(
+          fontFamily: 'Rubik',
+          fontSize: 18.sp,
+          color: CustomColors.color2,
+          fontWeight: FontWeight.w800
+      ),
+    );
+  }
+}
+
+//google font, color black, size 15, w500
+class GoogleFontText5 extends StatelessWidget {
+  final String data;
+
+  const GoogleFontText5({
+    Key? key,
+    required this.data,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      data,
+      style: TextStyle(
+          fontFamily: 'Rubik',
+          fontSize: 18.sp,
+          color: CustomColors.color2,
+          fontWeight: FontWeight.bold
+      ),
+    );
+  }
+}
+
+//google font, color black, size 12
+class GoogleFontText6 extends StatelessWidget {
+  final String data;
+
+  const GoogleFontText6({
+    Key? key,
+    required this.data,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      data,
+      style: TextStyle(
+          fontFamily: 'Rubik',
+          fontSize: 12.sp,
+          color: CustomColors.color2,
+      ),
+    );
+  }
+}
+
+
+
 //normal fonts
 //normal font, color white, size 14, bold
 class NormalFontText1 extends StatelessWidget {

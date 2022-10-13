@@ -17,33 +17,64 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       automaticallyImplyLeading: false,
       toolbarHeight: 60.h,
-      flexibleSpace: Container(decoration: BoxDecoration(gradient: CustomColors.gradientColor1),),
-      actions: const [
-        Padding(
-          padding: EdgeInsets.only(right: 15.0),
-          child: Icon(
-            Icons.add_circle_outline_outlined,
-            color: Colors.white,
-          ),
+      backgroundColor: Colors.transparent,
+      elevation: 0,
+      actions:  [
+        Row(
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(40.0),
+              child: Container(
+               // decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(5))),
+                color: Colors.white,
+                child: Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: Icon(
+                    Icons.notifications_none,
+                    color: CustomColors.color2,
+                    size: 18.h,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(width: 10.w,),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(40.0),
+              child: Container(
+                // decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(5))),
+                color: Colors.white,
+                child: Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: Icon(
+                    Icons.add,
+                    color: CustomColors.color2,
+                    size: 18.h,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(width: 20.w,)
+          ],
         )
       ],
       title: Row(
         children: [
           CircleAvatar(
+            backgroundColor: Colors.transparent,
             radius: 24.r,
             child: ClipOval(
               child: Image.asset(
                 fit: BoxFit.cover,
                 'assets/images/profile.jpg',
-                width: 50.w,
-                height: 50.h,
+                width: 38.h,
+                height: 38.h,
               ),
             ),
           ),
           SizedBox(
             width: 10.w,
           ),
-          const Text("Welcome User Name"),
+           const GoogleFontText4(data: 'Dr Cattle',),
         ],
       ),
     );

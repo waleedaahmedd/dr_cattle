@@ -17,4 +17,7 @@ class CustomColors {
 
   static LinearGradient linearGradient1 = const LinearGradient(colors: <Color>[Color.fromRGBO(255, 122, 0,1),
     Color.fromRGBO(255, 184, 0,1),]);
+
+  static LinearGradient linearGradient2 = const LinearGradient(colors: <Color>[Color.fromRGBO(235, 114, 114,1),
+    Color.fromRGBO(235, 20, 20,1),]);
 }

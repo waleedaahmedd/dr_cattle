@@ -98,14 +98,19 @@ class FarmsListScreen extends StatelessWidget {
                                           SizedBox(
                                             height: 2.h,
                                           ),
-                                          const GoogleFontText6(data: 'Total 56 cattle',),
-                                          SizedBox(width: 5.w),
+                                          const GoogleFontText6(
+                                            data: 'Total 56 cattle',
+                                          ),
+                                          SizedBox(
+                                            height: 10.h,
+                                          ),
                                           Row(
                                             children: [
                                               SizedBox(
                                                 height: 20.h,
                                                 child: CircleAvatar(
-                                                  backgroundColor: Colors.transparent,
+                                                  backgroundColor:
+                                                      Colors.transparent,
                                                   radius: 24.r,
                                                   child: ClipOval(
                                                     child: Image.asset(
@@ -117,17 +122,21 @@ class FarmsListScreen extends StatelessWidget {
                                                   ),
                                                 ),
                                               ),
-                                              const GoogleFontText6(data: 'Total 56 cattle',),
+                                              const GoogleFontText6(
+                                                data: 'Total 56 cattle',
+                                              ),
                                             ],
                                           ),
-
+                                          SizedBox(
+                                            height: 10.h,
+                                          ),
                                           LinearPercentIndicator(
                                             /*leading: const Icon(
                                               Icons.health_and_safety,
                                               color: CustomColors.color1,
                                             ),*/
                                             linearGradient:
-                                                CustomColors.linearGradient1,
+                                                CustomColors.linearGradient2,
                                             animation: true,
                                             barRadius:
                                                 const Radius.circular(10),

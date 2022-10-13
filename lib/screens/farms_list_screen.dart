@@ -41,7 +41,7 @@ class FarmsListScreen extends StatelessWidget {
               ),
             ),
             Container(
-              height: 100.h,
+              height: 120.h,
               child: ListView.builder(
                   shrinkWrap: true,
                   padding:
@@ -73,7 +73,7 @@ class FarmsListScreen extends StatelessWidget {
                                   child: Image.asset(
                                     'assets/images/farm.jpg',
                                     width: 120.w,
-                                    //height: 100.w,
+                                    height: 120.h,
                                     fit: BoxFit.cover,
                                   ),
                                 ),
@@ -99,9 +99,10 @@ class FarmsListScreen extends StatelessWidget {
                                             height: 2.h,
                                           ),
                                           const GoogleFontText6(data: 'Total 56 cattle',),
+                                          SizedBox(width: 5.w),
                                           Row(
                                             children: [
-                                              Container(
+                                              SizedBox(
                                                 height: 20.h,
                                                 child: CircleAvatar(
                                                   backgroundColor: Colors.transparent,

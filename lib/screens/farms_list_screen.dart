@@ -40,8 +40,8 @@ class FarmsListScreen extends StatelessWidget {
                 ],
               ),
             ),
-            Container(
-              height: 120.h,
+            SizedBox(
+              height: 122.h,
               child: ListView.builder(
                   shrinkWrap: true,
                   padding:
@@ -72,11 +72,12 @@ class FarmsListScreen extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(10.0),
                                   child: Image.asset(
                                     'assets/images/farm.jpg',
-                                    width: 120.w,
-                                    height: 120.h,
+                                    width: 122.w,
+                                    height: 122.h,
                                     fit: BoxFit.cover,
                                   ),
                                 ),
+                                SizedBox(width: 10.w,),
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
@@ -87,7 +88,7 @@ class FarmsListScreen extends StatelessWidget {
                                       fit: BoxFit.cover,
                                     ),*/
                                     Padding(
-                                      padding: const EdgeInsets.all(10),
+                                      padding: const EdgeInsets.all(5),
                                       child: Column(
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
@@ -108,6 +109,7 @@ class FarmsListScreen extends StatelessWidget {
                                             children: [
                                               SizedBox(
                                                 height: 20.h,
+                                                width: 23.w,
                                                 child: CircleAvatar(
                                                   backgroundColor:
                                                       Colors.transparent,
@@ -122,8 +124,9 @@ class FarmsListScreen extends StatelessWidget {
                                                   ),
                                                 ),
                                               ),
+                                              SizedBox(width: 5.w,),
                                               const GoogleFontText6(
-                                                data: 'Total 56 cattle',
+                                                data: 'Arif Majeed',
                                               ),
                                             ],
                                           ),
@@ -131,6 +134,7 @@ class FarmsListScreen extends StatelessWidget {
                                             height: 10.h,
                                           ),
                                           LinearPercentIndicator(
+                                            padding: EdgeInsets.symmetric(horizontal: 0),
                                             /*leading: const Icon(
                                               Icons.health_and_safety,
                                               color: CustomColors.color1,
@@ -142,7 +146,7 @@ class FarmsListScreen extends StatelessWidget {
                                                 const Radius.circular(10),
                                             animationDuration: 2000,
                                             width: 160.w,
-                                            lineHeight: 10.0.h,
+                                            lineHeight: 15.0.h,
                                             center: const Text(
                                               "Healthy Cattle 50.0%",
                                               style: TextStyle(
@@ -206,26 +210,63 @@ class FarmsListScreen extends StatelessWidget {
                               Padding(
                                 padding: const EdgeInsets.all(10),
                                 child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  crossAxisAlignment:
+                                  CrossAxisAlignment.start,
                                   children: [
                                     const GoogleFontText5(
-                                      data: 'Farm Name',
+                                      data: 'Arif Cattle Farm',
+                                    ),
+                                    SizedBox(
+                                      height: 2.h,
+                                    ),
+                                    const GoogleFontText6(
+                                      data: 'Total 56 cattle',
+                                    ),
+                                    SizedBox(
+                                      height: 10.h,
+                                    ),
+                                    Row(
+                                      children: [
+                                        SizedBox(
+                                          height: 20.h,
+                                          width: 23.w,
+                                          child: CircleAvatar(
+                                            backgroundColor:
+                                            Colors.transparent,
+                                            radius: 24.r,
+                                            child: ClipOval(
+                                              child: Image.asset(
+                                                fit: BoxFit.cover,
+                                                'assets/images/profile.jpg',
+                                                width: 20.h,
+                                                height: 20.h,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        SizedBox(width: 5.w,),
+                                        const GoogleFontText6(
+                                          data: 'Arif Majeed',
+                                        ),
+                                      ],
                                     ),
                                     SizedBox(
                                       height: 10.h,
                                     ),
                                     LinearPercentIndicator(
-                                      leading: const Icon(
-                                        Icons.health_and_safety,
-                                        color: CustomColors.color1,
-                                      ),
+                                      padding: EdgeInsets.symmetric(horizontal: 0),
+                                      /*leading: const Icon(
+                                              Icons.health_and_safety,
+                                              color: CustomColors.color1,
+                                            ),*/
                                       linearGradient:
-                                          CustomColors.linearGradient1,
+                                      CustomColors.linearGradient1,
                                       animation: true,
-                                      barRadius: const Radius.circular(10),
+                                      barRadius:
+                                      const Radius.circular(10),
                                       animationDuration: 2000,
-                                      width: 294.w,
-                                      lineHeight: 10.0.h,
+                                      width: 316.w,
+                                      lineHeight: 15.0.h,
                                       center: const Text(
                                         "Healthy Cattle 50.0%",
                                         style: TextStyle(
